@@ -17,6 +17,21 @@ module.exports = function(environment) {
       }
     },
 
+    firebase: {
+      apiKey: "AIzaSyB8XonRLT7ofxWO4dbWTpMaTRrpGQ2l8zQ",
+      authDomain: "ember-blog-d8b5c.firebaseapp.com",
+      databaseURL: "https://ember-blog-d8b5c.firebaseio.com",
+      projectId: "ember-blog-d8b5c",
+      storageBucket: "ember-blog-d8b5c.appspot.com",
+      messagingSenderId: "692910046727"
+    },
+
+    contentSecurityPolicy: {
+      'script-src': "'self' 'unsafe-eval' apis.google.com",
+      'frame-src': "'self' https://*.firebaseapp.com",
+      'connect-src': "'self' wss://*.firebaseio.com https://*.googleapis.com"
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
