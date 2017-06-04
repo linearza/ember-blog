@@ -41,6 +41,9 @@ textarea{
 
 a {
   text-decoration: none;
+  &:active{
+    color: inherit;
+  }
   :not(.button) {
     &:active{
       text-decoration: underline;

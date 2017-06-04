@@ -1,7 +1,7 @@
 .posts-container{
-  padding: 0 15px;
+  padding: 0 15px 40px;
   max-width: 768px;
-  margin: 20px auto;
+  margin: 20px auto 40px;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
 }
@@ -45,5 +45,9 @@
       transition: opacity 200ms linear;
       z-index: 1;
     }
+  }
+  &.single{
+    margin-bottom: 0;
+    border: 0;
   }
 }
