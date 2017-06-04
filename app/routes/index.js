@@ -6,11 +6,12 @@ const {
 
 export default Ember.Route.extend({
 
+  model() {
+    return this.get('store').findAll('post');
+  },
+
   setupController(controller, model) {
-    $('.app-loader').addClass('fade-out');
-    run.later(() => {
-      $('.app-loader').remove();
-    }, 500);
+    this.controller.set('posts', model);
   }
 
 });

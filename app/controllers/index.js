@@ -9,6 +9,10 @@ export default Ember.Controller.extend({
         item.deleteRecord();
         item.save();
       });
+    },
+
+    goToPost(post) {
+      this.transitionToRoute('post', post.id);
     }
   }
 

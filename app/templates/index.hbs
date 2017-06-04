@@ -1,0 +1,19 @@
+<div class="posts-container">
+  {{#each posts as |post|}}
+    <div class="post {{if post.isDeleting 'is-deleting'}}">
+      <h2 onclick={{action 'goToPost' post}}>{{post.title}}</h2>
+      <p>{{post.body}}</p>
+      <p>{{post.createdAt}}</p>
+
+      <button onclick={{action 'deletePost' post}} class="delete">x</button>
+    </div>
+
+  {{else}}
+    <h2>No posts</h2>
+  {{/each}}
+</div>
+
+{{#x-writer as |writer|}}
+  {{textarea value=writer.title class="title" placeholder="Title"}}
+  {{textarea value=writer.body class="body" placeholder="Body"}}
+{{/x-writer}}

@@ -4,34 +4,46 @@
   margin: 20px auto;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
-  .post{
-    margin-bottom: 50px;
-    border-bottom: 1px solid grey;
-    padding: 20px 0;
-    position: relative;
+}
+
+.post{
+  margin-bottom: 50px;
+  border-bottom: 1px solid grey;
+  padding: 20px 0;
+  position: relative;
+  h2 {
+    cursor: pointer;
+    &:active{
+      color: #ccc;
+    }
+    @media (hover:hover) {
+      &:hover{
+        color: #666;
+      }
+    }
+  }
+  .delete{
+    float: right;
+  }
+  &:after{
+    content: '';
+    opacity: 0;
+  }
+  &.is-deleting{
     .delete{
-      float: right;
+      display: none;
     }
     &:after{
       content: '';
-      opacity: 0;
-    }
-    &.is-deleting{
-      .delete{
-        display: none;
-      }
-      &:after{
-        content: '';
-        position: absolute;
-        left: -10px;
-        right: -10px;
-        top: -10px;
-        bottom: -10px;
-        background: rgba(0,0,0,1);
-        opacity: 1;
-        transition: opacity 200ms linear;
-        z-index: 1;
-      }
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      top: -10px;
+      bottom: -10px;
+      background: rgba(0,0,0,1);
+      opacity: 1;
+      transition: opacity 200ms linear;
+      z-index: 1;
     }
   }
 }
