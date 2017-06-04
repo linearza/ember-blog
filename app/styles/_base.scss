@@ -1,0 +1,68 @@
+html{
+  height: 100%;
+  body{
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    & > .ember-view{
+      height: 100%;
+      padding-top: 1px;
+      position: relative;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+textarea{
+  width: 100%;
+  min-height: 50px;
+  outline: 0;
+  border: 1px solid #e8e6e6;
+  border-bottom: 1px solid grey;
+  font-size: 16px;
+  margin: 20px 0;
+  padding: 10px;
+  &::placeholder{
+    color: #c7c7c7;
+  }
+  &.title{
+    min-height: 50px;
+  }
+  &.body{
+    min-height: 200px;
+  }
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 14px;
+  background: transparent;
+  border: 1px solid black;
+  display: inline-block;
+  outline: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  @media (hover:hover) {
+    &:hover{
+      background: rgba(0,0,0,0.1);
+    }
+  }
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
+}
+
+
+

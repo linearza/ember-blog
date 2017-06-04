@@ -6,6 +6,7 @@
     <title>EmberBlog</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather:400,700" rel="stylesheet">
 
     {{content-for "head"}}
 
@@ -15,6 +16,13 @@
     {{content-for "head-footer"}}
   </head>
   <body>
+
+    <div class="app-loader">
+      <div class="loading">
+        Loading...
+      </div>
+    </div>
+
     {{content-for "body"}}
 
     <script src="{{rootURL}}assets/vendor.js"></script>
