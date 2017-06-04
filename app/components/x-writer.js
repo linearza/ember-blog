@@ -20,7 +20,9 @@ export default Ember.Component.extend({
       this.get('store').createRecord('post', {
         title: this.get('title'),
         body: this.get('body'),
-      }).save().catch(e => {
+      }).save().then(() => {
+        this.set('isFullscreen', false);
+      }).catch(e => {
         console.log(e.errors);
       });
     },
