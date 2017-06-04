@@ -1,0 +1,28 @@
+.x-writer{
+  max-width: 800px;
+  padding: 15px;
+  border-top: 1px solid grey-light;
+  margin: 0 auto;
+  clear:both;
+  .controls{
+    text-align: right;
+    button{
+      margin-left:10px;
+    }
+  }
+  &.is-fullscreen{
+    position: fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+    background: white;
+    .wrap{
+      left: 15px;
+      right: 15px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}

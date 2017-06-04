@@ -10,23 +10,17 @@
       <p>{{post.body}}</p>
       <p>{{post.createdAt}}</p>
 
-      <button onclick={{action 'deletePost' post}}>x</button>
+      <button onclick={{action 'deletePost' post}} class="delete">x</button>
     </div>
 
   {{else}}
     <h2>No posts</h2>
   {{/each}}
-  <button onclick={{action 'createPost'}}>Create post</button>
 </div>
 
-
+{{#x-writer as |writer|}}
+  {{textarea value=writer.title class="title" placeholder="Title"}}
+  {{textarea value=writer.body class="body" placeholder="Body"}}
+{{/x-writer}}
 
 {{outlet}}
-
-
-<div class="new-post">
-  {{textarea value=newPostTitle class="title" placeholder="Title here..."}}<br >
-  {{textarea value=newPostBody class="body" placeholder="Body content here..."}}
-
-  <button onclick={{action 'savePost'}}>Save new post</button>
-</div>

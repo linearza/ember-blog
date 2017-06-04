@@ -1,0 +1,15 @@
+<div class="wrap">
+  {{yield
+    (hash
+      title=title
+      body=body
+      isFullscreen=isFullscreen
+      save=(action 'save')
+      fullscreen=(action 'fullscreen')
+    )
+  }}
+  <div class="controls">
+    <button onclick={{action 'fullscreen'}}>{{if isFullscreen 'x' '^'}}</button>
+    <button onclick={{action 'save'}}>Save</button>
+  </div>
+</div>
