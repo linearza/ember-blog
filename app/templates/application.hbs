@@ -1,5 +1,13 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#each posts as |post|}}
+  <h2>{{post.title}}</h2>
+  <p>{{post.body}}</p>
+
+{{else}}
+  <h2>No posts</h2>
+{{/each}}
+
+<button onclick={{action 'createPost'}}>Create post</button>
+
 
 {{outlet}}
+

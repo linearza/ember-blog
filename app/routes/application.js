@@ -1,0 +1,13 @@
+import Ember from 'ember';
+
+export default Ember.Route.extend({
+
+  model() {
+    return this.get('store').peekAll('post');
+  },
+
+  setupController(controller, model) {
+    this.controller.set('posts', model);
+  }
+
+});
