@@ -7,7 +7,9 @@ export default Ember.Controller.extend({
       this.get('store').createRecord('post', {
         title: 'New post',
         body: 'No body'
-      })
+      }).save().catch(e => {
+        console.log(e.errors);
+      });
     }
   }
 
