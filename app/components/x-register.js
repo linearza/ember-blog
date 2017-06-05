@@ -8,7 +8,7 @@ const {
 export default Ember.Component.extend({
   classNameBindings: [':x-register', 'errors'],
 
-  session: inject.service(),
+  // session: inject.service(),
 
   errors: false,
 
