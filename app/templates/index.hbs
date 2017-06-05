@@ -1,3 +1,8 @@
+<div class="header">
+  <h1>{{#link-to 'index'}}My blog title{{/link-to}}</h1>
+  <span>My blog description</span>
+</div>
+
 <div class="posts-container">
   {{#each posts as |post|}}
     <div class="post {{if post.isDeleting 'is-deleting'}}">
@@ -5,7 +10,9 @@
       <p>{{post.body}}</p>
       <p>{{post.createdAt}}</p>
 
-      <button onclick={{action 'deletePost' post}} class="delete">x</button>
+      {{#if session.isAuthenticated}}
+        <button onclick={{action 'deletePost' post}} class="delete">x</button>
+      {{/if}}
     </div>
 
   {{else}}
@@ -13,7 +20,9 @@
   {{/each}}
 </div>
 
-{{#x-writer as |writer|}}
-  {{textarea value=writer.title class="title" placeholder="Title"}}
-  {{textarea value=writer.body class="body" placeholder="Body"}}
-{{/x-writer}}
+{{#if session.isAuthenticated}}
+  {{#x-writer as |writer|}}
+    {{textarea value=writer.title class="title" placeholder="Title"}}
+    {{textarea value=writer.body class="body" placeholder="Body"}}
+  {{/x-writer}}
+{{/if}}

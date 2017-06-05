@@ -1,10 +1,23 @@
 .header{
   text-align: center;
-  padding: 15px;
+  padding: 15px 15px 30px;
+  margin-bottom: 20px;
+  position: relative;
   h1 {
     margin-bottom: 10px;
     a{
       color: black;
     }
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 30px);
+    max-width: 700px;
+    height: 1px;
+    background: #dcdcdc;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

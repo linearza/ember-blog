@@ -1,6 +1,13 @@
-<div class="header">
-  <h1>{{#link-to 'index'}}My blog title{{/link-to}}</h1>
-  <span>My blog description</span>
-</div>
+
+<ul class="nav">
+  <li>{{#link-to 'index'}}home{{/link-to}}</li>
+  <li>{{#link-to 'login'}}login{{/link-to}}</li>
+  <li>{{#link-to 'register'}}register{{/link-to}}</li>
+
+
+  {{#if session.isAuthenticated}}
+    Logged in
+  {{/if}}
+</ul>
 
 {{outlet}}

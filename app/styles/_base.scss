@@ -25,17 +25,30 @@ textarea{
   outline: 0;
   border: 1px solid #e8e6e6;
   border-bottom: 1px solid grey;
-  font-size: 16px;
+  font-size: 15px;
   margin: 20px 0;
   padding: 20px 20px 0;
   &::placeholder{
-    color: #c7c7c7;
+    color: #808080;
   }
   &.title{
     min-height: 50px;
   }
   &.body{
     min-height: 200px;
+  }
+}
+
+input{
+  width: 100%;
+  outline: 0;
+  border: 1px solid #e8e6e6;
+  border-bottom: 1px solid grey;
+  font-size: 15px;
+  margin: 20px 0;
+  padding: 20px 20px;
+  &::placeholder{
+    color: #808080;
   }
 }
 

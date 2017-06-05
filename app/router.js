@@ -13,6 +13,9 @@ Router.map(function() {
   this.route('post', {
     path: 'post/:post_id'
   });
+  this.route('login');
+  this.route('account');
+  this.route('register');
 });
 
 export default Router;
