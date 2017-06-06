@@ -25,9 +25,12 @@ export default Ember.Component.extend({
         this.get('store').createRecord('user', {
           id: data.uid,
           email: this.get('email')
-        }).save();
-        this.sendAction('onRegister');
-      }).catch(function(error) {
+        }).save().then(() => {
+          this.get('onRegister')();
+        }).catch((errors) => {
+          console.log('errors', errors, errors.errors);
+        });
+      }).catch((error) => {
         // Handle Errors here.
         var errorCode = error.code;
         var errorMessage = error.message;
