@@ -8,18 +8,24 @@ const {
 export default Ember.Component.extend({
   classNameBindings: [':x-register', 'errors'],
 
-  // session: inject.service(),
+  store: inject.service(),
 
   errors: false,
 
   email: null,
   password: null,
 
+  onRegister: null,
+
   actions: {
     register: function() {
 
-      firebase.auth().createUserWithEmailAndPassword(this.get('email'), this.get('password')).then(() => {
+      firebase.auth().createUserWithEmailAndPassword(this.get('email'), this.get('password')).then((data) => {
         console.log('success!');
+        this.get('store').createRecord('user', {
+          id: data.uid,
+          email: this.get('email')
+        }).save();
         this.sendAction('onRegister');
       }).catch(function(error) {
         // Handle Errors here.

@@ -6,6 +6,8 @@ export default DS.Model.extend({
   surname: DS.attr(),
   username: DS.attr(),
 
+  email: DS.attr(),
+
   password: DS.attr(),
 
   posts: DS.hasMany('post')
