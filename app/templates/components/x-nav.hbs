@@ -1,0 +1,12 @@
+
+<ul class="nav">
+  <li>{{#link-to 'index'}}home{{/link-to}}</li>
+
+  <li>{{#link-to 'register'}}register{{/link-to}}</li>
+  {{#if session.isAuthenticated}}
+    <li onclick={{action 'logout'}}>log out</li>
+  {{else}}
+    <li>{{#link-to 'login'}}login{{/link-to}}</li>
+  {{/if}}
+
+</ul>

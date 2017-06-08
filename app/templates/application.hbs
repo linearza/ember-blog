@@ -1,13 +1,2 @@
-
-<ul class="nav">
-  <li>{{#link-to 'index'}}home{{/link-to}}</li>
-  <li>{{#link-to 'login'}}login{{/link-to}}</li>
-  <li>{{#link-to 'register'}}register{{/link-to}}</li>
-
-
-  {{#if session.isAuthenticated}}
-    Logged in
-  {{/if}}
-</ul>
-
+{{x-nav}}
 {{outlet}}

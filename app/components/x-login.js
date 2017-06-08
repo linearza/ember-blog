@@ -1,14 +1,13 @@
 import Ember from 'ember';
-import firebase from 'firebase';
 
 const {
   inject
 } = Ember;
 
 export default Ember.Component.extend({
-  classNameBindings: [':x-login', 'errors'],
+  classNameBindings: [':x-login', 'errors:has-errors'],
 
-  // session: inject.service(),
+  session: inject.service(),
 
   errors: false,
 
@@ -19,15 +18,21 @@ export default Ember.Component.extend({
 
   actions: {
     login: function() {
-      firebase.auth().signInWithEmailAndPassword(this.get('email'), this.get('password')).then(() => {
-        console.log('success!');
+
+      this.set('errors', false);
+
+      this.get('session').open('firebase', {
+        provider: 'password',
+        email: this.get('email'),
+        password: this.get('password')
+      }).then(() => {
         this.sendAction('onLogin');
-      }).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+      }).catch((errors) => {
+        var errorCode = errors.code;
+        var errorMessage = errors.message;
         console.log('errors', errorCode, errorMessage);
-        // ...
+
+        this.set('errors', errorMessage);
       });
     }
   }

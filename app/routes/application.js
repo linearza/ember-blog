@@ -1,10 +1,17 @@
 import Ember from 'ember';
 
 const {
-  run
+  run,
+  inject
 } = Ember;
 
 export default Ember.Route.extend({
+
+  session: inject.service(),
+
+  beforeModel: function() {
+    return this.get('session').fetch().catch(function() {});
+  },
 
   model() {
     return this.get('store').findAll('post');
