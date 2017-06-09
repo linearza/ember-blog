@@ -6,9 +6,20 @@ module.exports = {
   },
   extends: 'eslint:recommended',
   env: {
-    browser: true
+    browser: true,
+    es6: true
   },
   rules: {
-    "no-console": 0
+    "no-console": 0,
+    "comma-dangle": 1,
+    "no-extra-semi": 1,
+    "no-extra-boolean-cast": 1,
+    "no-mixed-spaces-and-tabs": 1
+  },
+  globals: {
+    document: true,
+    window: true,
+    $: true,
+    Ember: true,
   }
 };

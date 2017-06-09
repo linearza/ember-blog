@@ -7,7 +7,7 @@
   {{#each posts as |post|}}
     <div class="post {{if post.isDeleting 'is-deleting'}}">
       <h2 onclick={{action 'goToPost' post}}>{{post.title}}</h2>
-      <p>{{post.body}}</p>
+      <p>{{{post.formattedBody}}}</p>
       <p>{{post.createdAt}}</p>
 
       {{#if session.isAuthenticated}}

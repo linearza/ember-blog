@@ -1,6 +1,6 @@
 import firebase from 'firebase';
 
-export function initialize(application) {
+export function initialize() {
   var config = {
     apiKey: "AIzaSyB8XonRLT7ofxWO4dbWTpMaTRrpGQ2l8zQ",
     authDomain: "ember-blog-d8b5c.firebaseapp.com",
