@@ -9,6 +9,15 @@
       color: black;
     }
   }
+  .meta{
+    font-size: 12px;
+    color: #dcdcdc;
+    display: block;
+    span {
+      display: block;
+      margin-bottom: 3px;
+    }
+  }
   &:after{
     content: '';
     position: absolute;

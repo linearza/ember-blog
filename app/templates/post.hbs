@@ -1,5 +1,9 @@
 <div class="header">
   <h1>{{model.title}}</h1>
+  <div class="meta">
+    {{#if model.createdAt}}<span>{{concat 'Created at: ' (date model.createdAt)}}</span> {{/if}}
+    {{#if model.updatedAt}}<span>{{concat 'Last updated at: ' (date model.updatedAt)}}</span> {{/if}}
+  </div>
 </div>
 
 <div class="container">

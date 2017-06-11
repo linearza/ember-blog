@@ -26,9 +26,9 @@ export default Ember.Component.extend({
     }
   },
 
-
   actions: {
     save() {
+      this.get('writeable').set('updatedAt', new Date());
       this.get('writeable').save().then((post) => {
         this.get('goTo')('post', post);
         this.get('ui').setProperties({

@@ -23,6 +23,14 @@ export default DS.Model.extend({
 
   // tags: DS.attr(), hasMany?
 
-  author: DS.belongsTo('user')
+  author: DS.belongsTo('user'),
+
+  createdAt: DS.attr('date', {
+    defaultValue() {
+      return new Date();
+    }
+  }),
+
+  updatedAt: DS.attr('date')
 
 });

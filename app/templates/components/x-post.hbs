@@ -1,6 +1,10 @@
 <h2 onclick={{action (action goToPost post)}}>{{post.title}}</h2>
+  <div class="meta">
+    {{#if post.createdAt}}<span>{{concat 'Created at: ' (date post.createdAt)}}</span> {{/if}}
+    {{#if post.updatedAt}}<span>{{concat 'Last updated at: ' (date post.updatedAt)}}</span> {{/if}}
+  </div>
 <p>{{{post.formattedBody}}}</p>
-<p>{{post.createdAt}}</p>
+
 
 {{#if session.isAuthenticated}}
   <div class="tools">
