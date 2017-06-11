@@ -1,2 +1,14 @@
 {{x-nav}}
-{{outlet}}
+
+<div class="viewport {{if isScrollLocked 'scroll-locked'}}">
+  {{outlet}}
+</div>
+
+
+{{#if session.isAuthenticated}}
+  {{the-button}}
+  {{#if ui.isWriting}}
+    {{x-writer goTo=(action 'goTo')}}
+  {{/if}}
+{{/if}}
+

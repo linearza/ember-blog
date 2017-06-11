@@ -42,10 +42,26 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ## TO DO
 
-* Authentication validation
-* Smart nav element
-* User accounts section
-* Tags/Categories
-* Account attributes - avatar etc.
-* Proper model relationships/ownership
-* Tests
+- [x] Authentication validation
+- [x] Smart nav element
+- [ ] Smart nav element - advanced
+- [ ] User accounts section
+- [ ] Tags/Categories
+- [ ] Account attributes - avatar etc.
+- [ ] Proper model relationships/ownership
+- [ ] Tests
+- [ ] Post comments
+- [ ] Various service logins
+- [ ] Customizable welcome message
+- [x] Scroll locking (iphone proof)
+- [ ] Markdown smart editor
+- [ ] Editor post preview
+- [x] Improved global nav
+- [ ] Improved global nav - pretty
+- [ ] Header & footer
+- [ ] Post tools
+- [ ] Social sharing (addon?)
+
+
+
+

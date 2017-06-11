@@ -1,0 +1,11 @@
+.the-button{
+  position: fixed;
+  bottom: 40px;
+  right: 30px;
+  transform: translate3d(0px,0px,0px);
+  padding: 15px 18px;
+  border-radius: 100%;
+  z-index: $zi-the-button;
+}
+
+

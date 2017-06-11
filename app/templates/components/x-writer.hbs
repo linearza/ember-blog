@@ -1,15 +1,8 @@
 <div class="wrap">
-  {{yield
-    (hash
-      title=title
-      body=body
-      isFullscreen=isFullscreen
-      save=(action 'save')
-      fullscreen=(action 'fullscreen')
-    )
-  }}
+  {{textarea value=title class="title" placeholder="In the beginning..."}}
+  {{textarea value=body class="body" placeholder="The earth was without form and void, and darkness was over the face of the deep..."}}
   <div class="controls">
-    <button onclick={{action 'fullscreen'}}>{{if isFullscreen 'x' '^'}}</button>
-    <button onclick={{action 'save'}}>Save</button>
+    <button onclick={{action 'close'}}>Close</button>
+    <button onclick={{action 'save'}} class="inv">Save</button>
   </div>
 </div>

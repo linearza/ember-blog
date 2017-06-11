@@ -1,9 +1,27 @@
 .x-writer{
   max-width: 800px;
   padding: 15px;
-  border-top: 1px solid grey-light;
   margin: 0 auto;
   clear:both;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  .title{
+    font-size: 24px;
+    font-family: 'Merriweather', serif;
+    font-weight: 400;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    padding: 0;
+    min-width: 100%;
+  }
+  .body {
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    padding: 0;
+    min-width: 100%;
+  }
   .controls{
     text-align: right;
     button{
@@ -16,13 +34,11 @@
     right:0;
     bottom:0;
     top:0;
+    z-index: $zi-x-writer--fullscreen;
     background: white;
+    padding-top: 50px;
     .wrap{
-      left: 15px;
-      right: 15px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      height: 100%;
     }
   }
 }

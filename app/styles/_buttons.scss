@@ -1,0 +1,78 @@
+button, .button {
+  padding: 0 14px;
+  min-height: 40px;
+  min-width: 40px;
+  font-size: 14px;
+  background: white;
+  border: 1px solid black;
+  line-height: 1;
+  display: inline-block;
+  outline: 0;
+  border-radius: 20px;
+  cursor: pointer;
+  position: relative;
+  font-weight: 300;
+  &.add, &.close, &.delete{
+    padding: 0;
+    svg {
+      width: 20px;
+      height: 20px;
+      max-width: 50%;
+      max-height: 50%;
+      vertical-align: middle;
+    }
+  }
+  &.close, &.delete{
+    transform: rotate(45deg);
+    &:before{
+      margin-top: -5px;
+    }
+  }
+  &.small{
+    min-height: 30px;
+    min-width: 30px;
+  }
+  &.large{
+    min-height: 54px;
+    min-width: 54px;
+  }
+  &.inv{
+    background: black;
+    color: white;
+    svg {
+      fill: white;
+    }
+    &:active{
+      background: white;
+      color: black;
+      svg {
+        fill: black;
+      }
+    }
+    @media (hover:hover) {
+      &:hover{
+        background: white;
+        color: black;
+        svg {
+          fill: black;
+        }
+      }
+    }
+  }
+  &:active{
+    background: black;
+    color: white;
+    svg {
+      fill: white;
+    }
+  }
+  @media (hover:hover) {
+    &:hover{
+      background: black;
+      color: white;
+      svg {
+        fill: white;
+      }
+    }
+  }
+}

@@ -8,10 +8,23 @@ html{
     font-weight: 400;
     font-size: 16px;
     & > .ember-view{
-      height: 100%;
-      padding-top: 1px;
+      min-height: 100%;
+      // padding-top: 1px;
       position: relative;
     }
+  }
+}
+
+.viewport {
+  position: absolute;
+  top: 48px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  &.scroll-locked{
+    overflow-y: hidden;
   }
 }
 
@@ -65,27 +78,6 @@ a {
       &:hover{
         text-decoration: underline;
       }
-    }
-  }
-}
-
-button, .button {
-  padding: 10px 15px;
-  font-size: 14px;
-  background: white;
-  border: 1px solid black;
-  display: inline-block;
-  outline: 0;
-  border-radius: 20px;
-  cursor: pointer;
-  &:active{
-    background: black;
-    color: white;
-  }
-  @media (hover:hover) {
-    &:hover{
-      background: black;
-      color: white;
     }
   }
 }

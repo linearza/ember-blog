@@ -11,7 +11,7 @@
       <p>{{post.createdAt}}</p>
 
       {{#if session.isAuthenticated}}
-        <button onclick={{action 'deletePost' post}} class="delete">x</button>
+        <button onclick={{action 'deletePost' post}} class="small delete">{{partial 'svg/plus'}}</button>
       {{/if}}
     </div>
 
@@ -19,10 +19,3 @@
     <h2>No posts</h2>
   {{/each}}
 </div>
-
-{{#if session.isAuthenticated}}
-  {{#x-writer as |writer|}}
-    {{textarea value=writer.title class="title" placeholder="Title"}}
-    {{textarea value=writer.body class="body" placeholder="Body"}}
-  {{/x-writer}}
-{{/if}}

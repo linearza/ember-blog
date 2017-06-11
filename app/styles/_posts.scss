@@ -6,7 +6,7 @@
 
 .post{
   margin-bottom: 50px;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #dcdcdc;
   padding: 20px 0;
   position: relative;
   h2 {
@@ -21,7 +21,7 @@
     }
   }
   .delete{
-    float: right;
+    float: left;
   }
   &:after{
     content: '';

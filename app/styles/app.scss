@@ -1,5 +1,8 @@
 @import 'normalize';
+@import 'z-index';
+
 @import 'base';
+@import 'buttons';
 @import 'loading';
 @import 'containers';
 @import 'header';
@@ -12,3 +15,4 @@
 @import 'components/x-login';
 @import 'components/x-register';
 @import 'components/x-nav';
+@import 'components/the-button';
