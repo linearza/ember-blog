@@ -15,10 +15,25 @@
     }
   }
   .tools{
-    float: left;
+    text-align: center;
+    padding-top: 15px;
     button{
-      margin-right: 10px;
+      margin: 0 4px 0 7px;
+      vertical-align: top;
     }
+  }
+  &:before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #dcdcdc;
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    border-radius: 100%;
+    margin-left: -5px;
+    background: white;
   }
 
   &:after{

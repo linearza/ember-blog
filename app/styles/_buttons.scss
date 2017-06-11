@@ -12,6 +12,7 @@ button, .button {
   cursor: pointer;
   position: relative;
   font-weight: 300;
+  user-select: none;
   &.add, &.close, &.delete{
     padding: 0;
     svg {
