@@ -1,7 +1,4 @@
 .x-writer{
-  max-width: 800px;
-  padding: 15px;
-  margin: 0 auto;
   clear:both;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
@@ -21,6 +18,11 @@
     border-top: 0;
     padding: 0;
     min-width: 100%;
+  }
+  .wrap{
+    max-width: 800px;
+    padding: 15px;
+    margin: 0 auto;
   }
   .controls{
     text-align: right;
