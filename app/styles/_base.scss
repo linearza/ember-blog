@@ -23,6 +23,7 @@ html{
   bottom: 0;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  padding-bottom: 100px; // for the-button primarily
   &.scroll-locked{
     overflow-y: hidden;
   }

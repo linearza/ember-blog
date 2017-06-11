@@ -8,6 +8,9 @@ export default DS.Model.extend({
 
   @computed('body')
   formattedBody(body) {
+    if (!body) {
+      return;
+    }
     return body.split("\n").join("<br />");
 
     // return body.replace(/(\n)+/g, '<br />');
