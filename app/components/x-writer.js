@@ -20,12 +20,12 @@ export default Ember.Component.extend({
     this._super(...arguments);
 
     if (!this.get('writeable')) {
-      this.set('writeable', this.get('store').createRecord('post', {
-        title: null,
-        body: null
-      }));
+      this.setProperties({
+        writeable: this.get('store').createRecord('post')
+      });
     }
   },
+
 
   actions: {
     save() {

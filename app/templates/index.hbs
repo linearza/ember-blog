@@ -5,7 +5,9 @@
 
 <div class="container">
   {{#each posts as |post|}}
-    {{x-post post=post goToPost=(action 'goToPost')}}
+    {{#unless post.isNew}}
+      {{x-post post=post goToPost=(action 'goToPost')}}
+    {{/unless}}
   {{else}}
     <h2>No posts</h2>
   {{/each}}

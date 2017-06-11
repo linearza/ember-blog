@@ -4,6 +4,13 @@
 
 <div class="container">
   <p>{{{model.formattedBody}}}</p>
+
+  {{#if session.isAuthenticated}}
+    <div class="tools">
+      <button onclick={{action 'delete' model}} class="small delete">{{partial 'svg/plus'}}</button>
+      <button onclick={{action 'edit' model}} class="small ico">E</button>
+    </div>
+  {{/if}}
 </div>
 
 
