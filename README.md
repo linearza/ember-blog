@@ -61,6 +61,7 @@ Make use of the many generators for code, try `ember help generate` for more det
 - [ ] Header & footer
 - [ ] Post tools
 - [ ] Social sharing (addon?)
+- [ ] Search
 
 
 

@@ -11,27 +11,40 @@ export default Ember.Component.extend({
   store: inject.service(),
   ui: inject.service(),
 
-  title: null,
-  body: null,
-
   isFullscreen: true,
   goTo: null, // closure
 
+  writeable: null,
+
+  didInsertElement() {
+    this._super(...arguments);
+
+    if (!this.get('writeable')) {
+      this.set('writeable', this.get('store').createRecord('post', {
+        title: null,
+        body: null
+      }));
+    }
+  },
+
   actions: {
     save() {
-      this.get('store').createRecord('post', {
-        title: this.get('title'),
-        body: this.get('body'),
-      }).save().then((post) => {
+      this.get('writeable').save().then((post) => {
         this.get('goTo')('post', post);
-        this.set('ui.isWriting', false);
+        this.get('ui').setProperties({
+          isWriting: false,
+          writeable: null
+        });
       }).catch(e => {
         console.log(e.errors);
       });
     },
 
     close() {
-      this.set('ui.isWriting', false);
+      this.get('ui').setProperties({
+        isWriting: false,
+        writeable: null
+      });
     },
 
     fullscreen() {

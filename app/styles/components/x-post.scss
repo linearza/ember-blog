@@ -1,10 +1,4 @@
-.posts-container{
-  padding: 0 15px 40px;
-  max-width: 768px;
-  margin: 0px auto 40px;
-}
-
-.post{
+.x-post{
   margin-bottom: 50px;
   border-bottom: 1px solid #dcdcdc;
   padding: 20px 0;
@@ -20,9 +14,13 @@
       }
     }
   }
-  .delete{
+  .tools{
     float: left;
+    button{
+      margin-right: 10px;
+    }
   }
+
   &:after{
     content: '';
     opacity: 0;
@@ -43,9 +41,5 @@
       transition: opacity 200ms linear;
       z-index: 1;
     }
-  }
-  &.single{
-    margin-bottom: 0;
-    border: 0;
   }
 }

@@ -3,18 +3,9 @@
   <span>My blog description</span>
 </div>
 
-<div class="posts-container">
+<div class="container">
   {{#each posts as |post|}}
-    <div class="post {{if post.isDeleting 'is-deleting'}}">
-      <h2 onclick={{action 'goToPost' post}}>{{post.title}}</h2>
-      <p>{{{post.formattedBody}}}</p>
-      <p>{{post.createdAt}}</p>
-
-      {{#if session.isAuthenticated}}
-        <button onclick={{action 'deletePost' post}} class="small delete">{{partial 'svg/plus'}}</button>
-      {{/if}}
-    </div>
-
+    {{x-post post=post goToPost=(action 'goToPost')}}
   {{else}}
     <h2>No posts</h2>
   {{/each}}
