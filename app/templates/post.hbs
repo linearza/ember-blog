@@ -7,8 +7,8 @@
 
   {{#if session.isAuthenticated}}
     <div class="tools">
-      <button onclick={{action 'delete' model}} class="small delete">{{partial 'svg/plus'}}</button>
-      <button onclick={{action 'edit' model}} class="small ico">E</button>
+      <button onclick={{action 'delete' model}} class="small">delete</button>
+      <button onclick={{action 'edit' model}} class="small">edit</button>
     </div>
   {{/if}}
 </div>
