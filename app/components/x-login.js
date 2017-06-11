@@ -17,23 +17,39 @@ export default Ember.Component.extend({
   onLogin: null, //closure
 
   actions: {
-    login: function() {
-
+    login(provider) {
       this.set('errors', false);
 
-      this.get('session').open('firebase', {
-        provider: 'password',
-        email: this.get('email'),
-        password: this.get('password')
-      }).then(() => {
-        this.sendAction('onLogin');
-      }).catch((errors) => {
-        var errorCode = errors.code;
-        var errorMessage = errors.message;
-        console.log('errors', errorCode, errorMessage);
+      if (provider === 'github') {
+        this.get('session').open('firebase', {
+          provider: 'github',
+          settings: {
+            scope: 'user,gist',
+          }
+        }).then((data) => {
+          if (this.get('onLogin')) {
+            this.get('onLogin')();
+          }
+        });
+      } else {
 
-        this.set('errors', errorMessage);
-      });
+        this.get('session').open('firebase', {
+          provider: 'password',
+          email: this.get('email'),
+          password: this.get('password')
+        }).then(() => {
+          if (this.get('onLogin')) {
+            this.get('onLogin')();
+          }
+        }).catch((errors) => {
+          var errorCode = errors.code;
+          var errorMessage = errors.message;
+          console.log('errors', errorCode, errorMessage);
+
+          this.set('errors', errorMessage);
+        });
+
+      }
     }
   }
 });

@@ -6,6 +6,25 @@
   padding: 15px;
   text-align: right;
   position: relative;
+  .providers{
+    text-align: center;
+    padding: 10px 0;
+  }
+  .or {
+    text-align: center;
+    margin: 20px;
+    position: relative;
+    &:before{
+      content: 'or';
+      display: block;
+      padding: 0 5px;
+      position: absolute;
+      left: 50%;
+      background: white;
+      top: -10px;
+      margin-left: -12px;
+    }
+  }
   .errors{
     text-align: center;
     padding: 10px;

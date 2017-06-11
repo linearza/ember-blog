@@ -3,6 +3,7 @@
   <li>{{#link-to 'index'}}Home{{/link-to}}</li>
   <div class="right">
     {{#if session.isAuthenticated}}
+      <li>{{session.currentUser.email}}</li>
       <li onclick={{action 'logout'}}>Log out</li>
     {{else}}
       <li>{{#link-to 'register'}}Register{{/link-to}}</li>
